@@ -16,4 +16,5 @@ function plot_phasor(A, name)
     h = plot(z_4);
     label(h, name, 'location', 'east');
     axis equal;
+    hold off;
 end

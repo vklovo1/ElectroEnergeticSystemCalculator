@@ -1,0 +1,21 @@
+function [C_V C_I] = cv_ci_from_wye_conn(conn)
+    if conn == 0 
+        C_V = eye(3);
+        C_I = eye(3);
+    elseif conn == 2
+        C_V = (-1) * [0 0 1; 1 0 0; 0 1 0];
+        C_I = transpose(C_V) * (-1);
+    elseif conn == 4
+        C_I = [0 0 1; 1 0 0; 0 1 0];
+        C_V = transpose(C_I);
+    elseif conn == 6
+        C_V = -eye(3);
+        C_I = eye(3);
+    elseif conn == 8
+        C_V = [0 0 1; 1 0 0; 0 1 0];
+        C_I = transpose(C_V);
+    elseif conn == 10
+        C_I = [0 0 1; 1 0 0; 0 1 0];
+        C_V = (-1) * transpose(C_I)
+    end
+end
